@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#030406"><meta name="description" content="星云的颜色，从哪里来？从光与物质出发，触碰六团流动色彩，走进真实的星云影像。">
+<title>星云 · NEBULAE</title><link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/NebulaSans-Light.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="assets/Dune_Rise.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="motion.css?v=5"><link rel="stylesheet" href="colors.css?v=5"><link rel="stylesheet" href="spatial.css?v=6">
+</head>
+<body>
+<a class="skip" href="#clouds">进入正文</a>
+<canvas id="star-background" aria-hidden="true"></canvas>
+<main>
+<section class="hero" id="home" aria-labelledby="page-title"><div class="hero-stage">
+  <canvas id="nebula-cover" role="img" aria-label="纯虚拟粒子构成的流动星云，粒子随鼠标轻微偏移"></canvas>
+  <div class="hero-title"><h1 id="page-title">星云</h1><p class="english">NEBULAE</p><p class="hero-question">星云的颜色，从哪里来？</p></div></div>
+</section>
+<section class="introduction" id="clouds" aria-labelledby="cloud-title">
+  <div class="intro-main"><h2 id="cloud-title">一片云，<br>为何有万千颜色？</h2><p>星云是星际空间中的气体和尘埃云。<br>气体发光，尘埃散射星光；望远镜还记录着人眼看不见的波段。绚丽的颜色，就从这些光中显现。</p></div>
+  <div class="matter-visual"><canvas id="matter-cloud" aria-hidden="true"></canvas><div class="matter-elements"><span><b class="english">H</b>氢</span><span><b class="english">He</b>氦</span><span>尘埃</span></div></div>
+  <div class="intro-matter"><p>气体主要由氢和氦组成。恒星的辐射让气体发光；尘埃则遮挡、散射星光，也在红外波段留下自己的信号。</p><p>当云中足够致密、质量足够大的部分在引力作用下坍缩，就可能诞生新的恒星。</p></div>
+</section>
+<section class="earth-section" id="earth" aria-labelledby="earth-title">
+  <div class="earth-visual"><canvas id="earth-canvas" role="img" aria-label="使用NASA地表合成贴图渲染的自转地球"></canvas></div>
+  <div class="earth-copy"><h2 id="earth-title">从地球看去。</h2><p>这是我们观测宇宙的起点。</p><p>在足够暗的夜空，猎户座大星云肉眼可见，呈现为一块朦胧的亮斑。</p><p>照片里的细节与颜色，需要望远镜的集光能力、长时间曝光，以及不同波段的观测，才能逐渐显现。</p></div>
+</section>
+<section class="seeing" id="seeing" aria-labelledby="seeing-title">
+  <div class="seeing-image"><img src="assets/orion_spitzer-scene.webp" loading="lazy" alt="猎户座星云的哈勃与斯皮策合成影像"><p class="image-caption">猎户座星云 · 哈勃与斯皮策合成</p></div>
+  <div class="seeing-copy"><h2 id="seeing-title">我们如何读懂这些光？</h2><div class="history-list">
+    <article><h3 class="english">1864</h3><p>哈金斯分析猫眼星云的光谱，明亮的发射线为它的气体性质提供证据。</p></article>
+    <article><h3 class="english">1880</h3><p>德雷珀拍下猎户座星云，一次曝光持续了 50 分钟。</p></article>
+    <article><h3 class="english">1990</h3><p>哈勃升空，绕开地球大气湍流，记录更清晰的宇宙细节。</p></article>
+    <article><h3 class="english">2022</h3><p>韦布发布首批科学影像，用红外观测揭示更多被尘埃遮挡的结构。</p></article>
+  </div></div>
+</section>
+<section class="color-observatory" id="colors" aria-labelledby="colors-title">
+ <header class="colors-heading"><h2 id="colors-title">读懂星云的颜色。</h2><p>气体的发光，尘埃的散射，<br>还有被转译成颜色的红外信号。</p></header>
+ <div class="color-field"><canvas id="color-clouds" aria-hidden="true"></canvas><div class="color-cloud-grid" id="color-cloud-grid"></div></div>
+ <div class="color-explanation" id="color-explanation" aria-live="polite" aria-atomic="true"><div class="color-explanation-inner"><p class="color-explanation-hint">轻触一团光，看看颜色从何而来。</p></div></div>
+</section>
+<section class="journey" id="journey" aria-label="按距地球由近及远排列的星云"><div class="journey-heading"><h2>向远处，<br>探索宇宙的色彩。</h2><p>从地球出发，按距离由近及远 · 分布于不同天区</p></div><div id="nebula-list"></div></section>
+<div class="reading-tools"><button data-open-atlas>星云图册</button><button data-open-sources>资料与来源</button><button id="motion-toggle" aria-pressed="false">动态效果：开</button></div>
+<section class="universe" id="universe" aria-label="从虚拟行星与恒星系统向后拉远，穿过星云、星系与更大尺度的星系分布，最终只剩繁星">
+  <div class="universe-stage"><canvas id="universe-canvas" role="img" aria-label="纯虚拟粒子宇宙的向后拉远效果"></canvas><div class="universe-captions"><p class="universe-caption" data-retreat-caption="0">从一颗行星，继续向外。</p><p class="universe-caption" data-retreat-caption="1">恒星之间，云气绵延。</p><p class="universe-caption" data-retreat-caption="2">星云，只是星系中的一小部分。</p><p class="universe-caption" data-retreat-caption="3">更远处，还有无数星系。</p></div></div>
+</section>
+<section class="cycle-ending" id="return-to-light" aria-labelledby="cycle-title"><div class="cycle-stage"><canvas id="cycle-cloud" role="img" aria-label="呼应开场、由六种柔和色彩构成的流动粒子星云"></canvas><div class="cycle-copy"><h2 id="cycle-title">星云</h2><p class="english" lang="en">NEBULAE</p><p class="cycle-answer">这些颜色，有了来处。</p><p class="cycle-thought">发光的气体，散射星光的尘埃，<br>以及被转译成图像的遥远信号。</p><a class="cycle-return" href="#home">重新看见</a></div></div></section>
+</main>
+<dialog id="gallery" aria-label="星云图集"><div class="dialog-nav"><button data-close-dialog="gallery">返回</button><button id="gallery-next">下一个星云</button></div><div id="gallery-content"></div></dialog>
+<dialog id="atlas" aria-label="星云图册"><div class="dialog-nav"><button data-close-dialog="atlas">返回</button></div><div class="atlas-heading"><h2>星云图册</h2></div><div class="atlas-list" id="atlas-list"></div></dialog>
+<dialog id="sources" aria-label="资料与来源"><div class="dialog-nav"><button data-close-dialog="sources">返回</button></div><div class="sources-body"><h2>资料与来源</h2><p>星云展示使用 NASA、ESA、CSA、STScI 及合作团队的真实观测影像，保留原发布配色。图片经过网页压缩和取景裁切，图集中可查看完整影像与原始发布。</p><p>封面、色彩探索中的粒子云、滚动时的前景微粒、底层微光与结尾宇宙由程序生成。色彩云团是对颜色的视觉演绎，点击说明结合可见光发射、尘埃散射与观测赋色展开。结尾按行星、恒星系统、星云、星系和更大尺度结构展开，是尺度关系的艺术演绎。</p><p>地球使用 NASA Blue Marble 卫星观测合成贴图，渲染为自转球体。</p><div id="source-image-list"></div><h3>颜色与观测</h3><ul class="source-links"><li><a href="https://science.nasa.gov/universe/stories/quick-reads/decoding-nebulae/" target="_blank" rel="noopener">NASA · 星云的发光与反射</a></li><li><a href="https://science.nasa.gov/missions/hubble/hubble-sees-a-celestial-swan-and-butterfly/" target="_blank" rel="noopener">NASA · 氧的发射光与图像赋色</a></li><li><a href="https://science.nasa.gov/mission/webb/science-overview/science-explainers/how-are-webbs-full-color-images-made/" target="_blank" rel="noopener">NASA / STScI · 从灰度观测到彩色影像</a></li></ul><h3>科学与历史</h3><ul class="source-links"><li><a href="https://science.nasa.gov/solar-system/skywatching/night-sky-network/solar-system-galaxy-universe-whats-the-difference/" target="_blank" rel="noopener">NASA · 太阳系、星系与宇宙的尺度</a></li><li><a href="https://www.nasa.gov/universe/a-cosmic-tarantula-caught-by-nasas-webb/" target="_blank" rel="noopener">NASA · 大麦哲伦云中的蜘蛛星云</a></li><li><a href="https://science.nasa.gov/mission/hubble/science/universe-uncovered/hubble-nebulae/" target="_blank" rel="noopener">NASA · 星云</a></li><li><a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-42/" target="_blank" rel="noopener">NASA · 猎户座大星云的肉眼观测</a></li><li><a href="https://www.rasc.ca/node/40459" target="_blank" rel="noopener">RASC · 哈金斯与星云光谱</a></li><li><a href="https://www.nature.com/articles/022583a0" target="_blank" rel="noopener">Nature · 德雷珀的星云摄影，1880</a></li><li><a href="https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/" target="_blank" rel="noopener">NASA · 哈勃时间线</a></li><li><a href="https://science.nasa.gov/mission/webb/webbs-first-images/" target="_blank" rel="noopener">NASA · 韦伯首批科学影像</a></li></ul><h3>图像与字体许可</h3><ul class="source-links"><li><a href="https://www.nasa.gov/nasa-brand-center/images-and-media/" target="_blank" rel="noopener">NASA 媒体使用指引</a></li><li><a href="https://esawebb.org/copyright/" target="_blank" rel="noopener">ESA/Webb 图像许可</a></li><li><a href="https://rubinobservatory.org/gallery/media-policy" target="_blank" rel="noopener">Rubin 图像许可</a></li><li><a href="assets/dune-License.txt" target="_blank" rel="noopener">Dune Rise · Fontswan / Jesta Designs · SIL OFL 1.1</a></li><li><a href="assets/NotoSansSC-OFL.txt" target="_blank" rel="noopener">Noto Sans SC · SIL OFL 1.1</a></li></ul></div></dialog>
+<noscript><p class="noscript">请开启 JavaScript 以观看粒子动效和星云图集。</p></noscript>
+<script src="app.js?v=6" type="module"></script>
+</body></html>
